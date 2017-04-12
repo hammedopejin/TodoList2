@@ -40,6 +40,8 @@ public class NewAddActivity extends AppCompatActivity {
     private Spinner priority;
     private Spinner status;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,8 +49,11 @@ public class NewAddActivity extends AppCompatActivity {
         eDate = (DatePicker) findViewById(R.id.dueDate);
         eDate.setMinDate(System.currentTimeMillis() - 1000);
         td = new TodoItemsDbHelper(this);
+
         addListenerOnPriorityItemSelection();
         addListenerOnStatusItemSelection();
+
+
     }
 
     @Override
@@ -77,40 +82,22 @@ public class NewAddActivity extends AppCompatActivity {
             onCancel(getCurrentFocus());
             return true;
         }
-        /*switch (item.getItemId()) {
-            case R.id.menu_load:
-                menuItem = item;
-                menuItem.setActionView(R.layout.progressbar);
-                menuItem.expandActionView();
-                TestTask task = new TestTask();
-                task.execute("test");
-                break;
-            default:
-                break;
-        }
-        return true; */
 
         return super.onOptionsItemSelected(item);
     }
 
 
     public void onAddItem(View v) {
+
         EditText eTask = (EditText)findViewById(R.id.task);
         task = eTask.getText().toString();
+
         day = String.valueOf(eDate.getDayOfMonth());
         month = String.valueOf(eDate.getMonth()+ 1);
         year = String.valueOf(eDate.getYear());
 
         EditText eNote = (EditText)findViewById(R.id.note);
         note = eNote.getText().toString();
-
-
-
-
-
-
-
-
 
         td.addItem(task, day, month, year, note, iPriority, iStatus);//writeItems();
 
@@ -138,6 +125,7 @@ public class NewAddActivity extends AppCompatActivity {
             }
         });
     }
+
 
     private void addListenerOnStatusItemSelection(){
         status = (Spinner) findViewById(R.id.status);

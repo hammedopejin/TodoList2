@@ -67,6 +67,7 @@ public class TodolistActivity extends AppCompatActivity implements MyDeleteDialo
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
 
+
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setLogo(R.mipmap.ic_action_launcher);
         getSupportActionBar().setDisplayUseLogoEnabled(true);

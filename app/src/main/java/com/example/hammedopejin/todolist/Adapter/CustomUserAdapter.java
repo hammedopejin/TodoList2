@@ -10,16 +10,18 @@ import android.widget.TextView;
 import com.example.hammedopejin.todolist.Items;
 import com.example.hammedopejin.todolist.R;
 
+
 /**
  * Created by hammedopejin on 3/1/17.
  */
 
 public class CustomUserAdapter extends ArrayAdapter<Items> {
     //View lookup cache
-    private static class ItemHolder{
+    private static class ItemHolder {
         TextView item;
         TextView priority;
     }
+
     Context context;
     int layoutResourceId;
     Items data[] = null;
@@ -58,7 +60,7 @@ public class CustomUserAdapter extends ArrayAdapter<Items> {
             row.setTag(holder);
         } else {
             //View is being recycled, retrieve the viewHolder object from tag
-            holder = (ItemHolder)row.getTag();
+            holder = (ItemHolder) row.getTag();
         }
         Items item = data[position];
         // Populate the data from the data object using the viewHolder object
@@ -68,4 +70,5 @@ public class CustomUserAdapter extends ArrayAdapter<Items> {
 
         return row;
     }
+
 }

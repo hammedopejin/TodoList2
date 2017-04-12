@@ -16,19 +16,20 @@
             </intent-filter>
         </activity>
         <activity android:name=".Activity.EditDialogActivity"></activity>
-        <activity android:name=".Activity.EditItemActivity"></activity>
-        <activity android:name=".Activity.NewAddActivity"></activity>
+        <activity android:name=".Activity.EditItemActivity"
+            android:windowSoftInputMode="stateVisible"></activity>
+        <activity android:name=".Activity.NewAddActivity"
+            android:windowSoftInputMode="stateVisible"></activity>
 
         <activity
             android:name=".Activity.SplashActivity"
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
     </application>
 
 </manifest>
+
 
